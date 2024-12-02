@@ -1,0 +1,24 @@
+### Get all users
+GET http://localhost:3000/users
+Content-Type: application/json
+
+###
+
+### Create a new user
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "senha": "john.doe@example.com"
+}
+
+curl -X POST http://localhost:3000/users\
+-H "Content-Type: application/json" \
+-d '{
+      "name": "John",
+      "senha": "john@example.com"
+    }'
+
+
+curl -X GET http://localhost:3000/users -H "Content-Type: application/json"
