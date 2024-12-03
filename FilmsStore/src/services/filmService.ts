@@ -1,4 +1,3 @@
-// src/services/filmService.ts
 
 import { FilmRepository } from "../repositories/filmRepository";
 import { Film } from "../models/filmModel";

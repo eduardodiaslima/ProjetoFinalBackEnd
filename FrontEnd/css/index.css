@@ -1,0 +1,572 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #f31212;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: aqua;
+    margin: 0;
+    padding: 0;
+    height: auto;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    background-color: #000000;
+    padding: 10px 20px;
+    list-style: none;
+    margin: 0;
+}
+
+.navbar li {
+    display: flex;
+    align-items: center;
+    margin: 0 15px;
+}
+
+.navbar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.navbar a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #f31212;
+}
+
+.imgtexto {
+    position: relative;
+}
+
+.imgfundo {
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+.netfilm {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 2);
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.card {
+    width: 200px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 10px;
+}
+
+.card-content h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.card-content p {
+    font-size: 16px;
+    color: #555;
+}
+
+
+.txtfilmes {
+    display: flex;
+    justify-content: center;
+    color: #ecf0f1;
+}
+
+.quem-somos {
+    padding: 40px;
+    background-color: #f4f4f4;
+  }
+  
+  .quem-somos .container {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .quem-somos h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  
+  .quem-somos-conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .quem-somos-conteudo .texto {
+    width: 60%;
+    font-size: 1.4em;
+    line-height: 1.6;
+  }
+  
+  .quem-somos-conteudo .imagem {
+    width: 35%;
+
+  }
+  
+  .quem-somos-conteudo .imagem img {
+    width: 100%;
+    max-height: 10rem;
+    max-width: 5rem;
+    padding-left: 40%;
+  }
+
+.contato {
+    padding: 50px 0;
+    background-color: #fff;
+  }
+  
+  .contato p {
+    text-align: center;
+    color: #666;
+    font-size: 1.2em;
+    margin-bottom: 40px;
+  }
+  
+  .contato-form {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    margin-bottom: 40px;
+    padding: 0 20px; 
+    box-sizing: border-box;
+    width: 100%;
+}
+
+form {
+    width: 100%;
+    max-width: 500px;
+    background-color: #f1f1f1;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+  
+  .input-field {
+    margin-bottom: 20px;
+  }
+  
+  .input-field label {
+    font-size: 1.1em;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .input-field input, 
+  .input-field textarea {
+    width: 95%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .input-field textarea {
+    resize: vertical;
+    min-height: 150px;
+  }
+  
+  .buttonenviar {
+    width: 100%;
+    padding: 12px;
+    background-color: #0077b6;
+    color: white;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #005f8a;
+  }
+  
+  .redes-sociais {
+    text-align: center;
+  }
+  
+  .redes-sociais h3 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .icones {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .icones .icon {
+    font-size: 1.5em;
+    color: #333;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #f1f1f1;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .icones .icon:hover {
+    background-color: #0077b6;
+    transform: translateY(-3px);
+    color: white;
+  }
+  
+  .icones .facebook:hover {
+    background-color: #3b5998;
+  }
+  
+  .icones .twitter:hover {
+    background-color: #1da1f2;
+  }
+  
+  .icones .instagram:hover {
+    background-color: #e1306c;
+  }
+  
+  .icones .linkedin:hover {
+    background-color: #0077b5;
+  }
+
+.container h2 {
+    font-size: 2.3rem;
+    display: flex;
+    justify-content: center;
+}
+
+.footer {
+  background-color: #141414;
+  color: #ccc;
+  padding: 40px 0;
+  font-size: 0.9em;
+}
+
+.footer .container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-logo {
+  width: 25%;
+  margin-bottom: 20px;
+}
+
+.footer-logo h3 {
+  font-size: 2em;
+  color: white;
+}
+
+.footer-links {
+  width: 50%;
+  margin-bottom: 20px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-links ul li {
+  margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+  color: #fff;
+}
+
+.footer-social {
+  width: 25%;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.footer-social a {
+  display: inline-block;
+  margin: 0 10px;
+  color: #ccc;
+  text-decoration: none;
+  font-size: 1.2em;
+  transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: #fff;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .footer-bottom p {
+    font-size: 1em;
+    color: #777;
+  }
+
+  .resenhas {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+  }
+  
+  .resenhas .container {
+    width: 80%;
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+  
+  h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #333;
+  }
+  
+  .resenha {
+    display: flex;
+    margin-bottom: 40px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .resenha-imagem {
+    width: 40%;
+    padding: 20px;
+  }
+  
+  .resenha-imagem img {
+    width: 70%;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  
+  .resenha-conteudo {
+    padding: 20px 20px 20px 10px;
+    width: 60%;
+  }
+  
+  .resenha-conteudo h3 {
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .resenha-conteudo p {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+  
+  .resenha-conteudo .btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: #0077b6;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+  }
+  
+  .resenha-conteudo .btn:hover {
+    background-color: #005f8a;
+  }
+
+  #lista-filmes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 0;
+}
+
+#lista-filmes li {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    overflow: hidden;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+#lista-filmes li:hover {
+    transform: translateY(-5px);
+}
+
+#lista-filmes img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+#lista-filmes h3 {
+    margin: 10px 0;
+    color: #444;
+    font-size: 20px;
+}
+
+#lista-filmes p {
+    padding: 10px;
+    color: #666;
+    font-size: 14px;
+}
+
+#lista-filmes button {
+    margin: 10px 5px;
+    padding: 8px 12px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#lista-filmes button:hover {
+    background-color: #f31212;
+    color: #fff;
+}
+
+#lista-filmes button:first-child {
+    background-color: #0077b6;
+    color: #fff;
+}
+
+#lista-filmes button:first-child:hover {
+    background-color: #005f8a;
+}
+
+.adicionar-filme-form,
+.editar-filme-form {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.adicionar-filme-form h1,
+.editar-filme-form h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.adicionar-filme-form label,
+.editar-filme-form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 16px;
+    color: #555;
+}
+
+.adicionar-filme-form input,
+.editar-filme-form input,
+.adicionar-filme-form textarea,
+.editar-filme-form textarea {
+    width: 95%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.adicionar-filme-form input:focus,
+.editar-filme-form input:focus,
+.adicionar-filme-form textarea:focus,
+.editar-filme-form textarea:focus {
+    border-color: #0077b6;
+    outline: none;
+}
+
+.adicionar-filme-form button,
+.editar-filme-form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #0077b6;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.adicionar-filme-form button:hover,
+.editar-filme-form button:hover {
+    background-color: #005f8a;
+}
