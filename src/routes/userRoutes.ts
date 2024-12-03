@@ -3,7 +3,7 @@ import { getUsers, addUser } from "../controllers/usersController";
 
 const router = Router();
 
-router.get("/users", getUsers);
-router.post("/users", addUser);
+router.get("/", getUsers);
+router.post("/", addUser);
 
 export default router;
