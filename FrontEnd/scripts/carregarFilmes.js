@@ -1,5 +1,5 @@
 async function carregarFilmes() {
-    const url = "https://app-avaliacao-brh0avd2ahegehac.brazilsouth-01.azurewebsites.net/projeto1/fecaf/listar/filmes";
+    const url = "http://localhost:3000/films";
 
     try {
         const response = await fetch(url);

@@ -1,14 +1,14 @@
 async function listarFilmes() {
-    const url = "https://app-avaliacao-brh0avd2ahegehac.brazilsouth-01.azurewebsites.net/projeto1/fecaf/listar/filmes";
-    const lista = document.getElementById('lista-filmes');
+    const url = "http://localhost:3000/films";
+    const lista = document.getElementById("lista-filmes");
 
     try {
         const response = await fetch(url);
         const data = await response.json();
-        lista.innerHTML = '';
+        lista.innerHTML = "";
 
-        data.filmes.forEach(filme => {
-            const item = document.createElement('li');
+        data.filmes.forEach((filme) => {
+            const item = document.createElement("li");
             item.innerHTML = `
                 <img src="${filme.image}" alt="${filme.nome}" width="100">
                 <h3>${filme.nome}</h3>
@@ -25,9 +25,9 @@ async function listarFilmes() {
 }
 
 async function deletarFilme(id) {
-    const url = `https://app-avaliacao-brh0avd2ahegehac.brazilsouth-01.azurewebsites.net/projeto1/fecaf/excluir/filme/${id}`;
+    const url = `http://localhost:3000/films/${id}`;
     try {
-        await fetch(url, { method: 'DELETE' });
+        await fetch(url, { method: "DELETE" });
         alert("Registro excluído com sucesso!");
         listarFilmes();
     } catch (error) {
@@ -47,58 +47,60 @@ function editarFilme(id) {
     window.location.href = `/put.html?id=${id}`;
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    const lista = document.getElementById('lista-filmes');
+document.addEventListener("DOMContentLoaded", () => {
+    const lista = document.getElementById("lista-filmes");
     if (lista) {
         listarFilmes();
     }
 });
 
-document.getElementById('adicionar-filme-form')?.addEventListener('submit', async (event) => {
-    event.preventDefault();
+document
+    .getElementById("adicionar-filme-form")
+    ?.addEventListener("submit", async (event) => {
+        event.preventDefault();
 
-    const form = event.target;
-    const filme = {
-        nome: form.nome.value.trim(),
-        sinopse: form.sinopse.value.trim(),
-        image: form.image.value.trim(),
-        valor: form.valor.value.trim(),
-    };
+        const form = event.target;
+        const filme = {
+            nome: form.nome.value.trim(),
+            sinopse: form.sinopse.value.trim(),
+            image: form.image.value.trim(),
+            valor: form.valor.value.trim(),
+        };
 
-    if (!filme.nome || !filme.sinopse || !filme.image || !filme.valor) {
-        alert("Existem campos obrigatórios que não foram preenchidos.");
-        return;
-    }
+        if (!filme.nome || !filme.sinopse || !filme.image || !filme.valor) {
+            alert("Existem campos obrigatórios que não foram preenchidos.");
+            return;
+        }
 
-    try {
-        await fetch('https://app-avaliacao-brh0avd2ahegehac.brazilsouth-01.azurewebsites.net/projeto1/fecaf/novo/filme', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(filme),
-        });
-        alert("Registro inserido com sucesso!");
-        window.location.href = '/admin.html';
-    } catch (error) {
-        alert("Erro ao adicionar filme.");
-        console.error("Erro ao adicionar filme:", error);
-    }
-});
+        try {
+            await fetch("http://localhost:3000/films", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(filme),
+            });
+            alert("Registro inserido com sucesso!");
+            window.location.href = "/admin.html";
+        } catch (error) {
+            alert("Erro ao adicionar filme.");
+            console.error("Erro ao adicionar filme:", error);
+        }
+    });
 
-document.addEventListener('DOMContentLoaded', async () => {
+document.addEventListener("DOMContentLoaded", async () => {
     const params = new URLSearchParams(window.location.search);
-    const id = params.get('id');
-    const form = document.getElementById('editar-filme-form');
+    const id = params.get("id");
+    const form = document.getElementById("editar-filme-form");
 
     if (form) {
         try {
-            const response = await fetch(`https://app-avaliacao-brh0avd2ahegehac.brazilsouth-01.azurewebsites.net/projeto1/fecaf/buscar/filme/${id}`);
-            
+            const response = await fetch(`http://localhost:3000/films${id}`);
+
             if (!response.ok) {
                 throw new Error("Erro ao buscar o filme.");
             }
 
             const data = await response.json();
-            const filme = data.filme[0]; 
+            const filme = data.filme[0];
 
             if (!filme) {
                 throw new Error("Nenhum filme encontrado com o ID fornecido.");
@@ -116,7 +118,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
 
-    form.addEventListener('submit', async (event) => {
+    form.addEventListener("submit", async (event) => {
         event.preventDefault();
 
         const filmeAtualizado = {
@@ -126,19 +128,24 @@ document.addEventListener('DOMContentLoaded', async () => {
             valor: form.valor.value.trim(),
         };
 
-        if (!filmeAtualizado.nome || !filmeAtualizado.sinopse || !filmeAtualizado.image || !filmeAtualizado.valor) {
+        if (
+            !filmeAtualizado.nome ||
+            !filmeAtualizado.sinopse ||
+            !filmeAtualizado.image ||
+            !filmeAtualizado.valor
+        ) {
             alert("Existem campos obrigatórios que não foram preenchidos.");
             return;
         }
 
         try {
-            await fetch(`https://app-avaliacao-brh0avd2ahegehac.brazilsouth-01.azurewebsites.net/projeto1/fecaf/atualizar/filme/${id}`, {
-                method: 'PUT',
-                headers: { 'Content-Type': 'application/json' },
+            await fetch(`http://localhost:3000/films${id}`, {
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(filmeAtualizado),
             });
             alert("Registro atualizado com sucesso!");
-            window.location.href = '/admin.html';
+            window.location.href = "/admin.html";
         } catch (error) {
             alert("Erro ao atualizar registro.");
             console.error("Erro ao atualizar filme:", error);
