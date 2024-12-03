@@ -9,12 +9,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/express": "^5.0.0",
-    "@types/node": "^18.19.67",
     "express": "^4.21.1",
+    "pg": "^8.13.1"
+  },
+  "description": "",
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.1",
+    "@types/pg": "^8.11.10",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.2"
-  },
-  "description": ""
+  }
 }
-
