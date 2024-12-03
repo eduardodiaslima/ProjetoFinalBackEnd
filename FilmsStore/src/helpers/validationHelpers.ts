@@ -1,3 +1,5 @@
+import { title } from "process";
+
 export const isValidSenha = (password: string): boolean => {
   const passwordRegex =
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
@@ -14,7 +16,6 @@ export const isValidEmail = (email: string): boolean => {
   return emailRegex.test(email);
 };
 
-
 export const capitalizeName = (name: string): string => {
   return name
     .split(" ")
@@ -22,4 +23,13 @@ export const capitalizeName = (name: string): string => {
     .join(" ")
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "");
+};
+
+export const isValidPrice = (price: number): boolean => {
+  return price > 0;
+};
+
+export const isValidTitle = (title: string): boolean => {
+  const titleRegex = /^[A-Za-zÀ-ÿ\s]+$/;
+  return title.length >= 3 && titleRegex.test(title);
 };
