@@ -1,15 +1,25 @@
 import { Request, Response } from "express";
-import { users, User } from '../models/userModel';
+import { UserRepository } from "../repositories/userRepository";
 
-export const getUsers = (req: Request, res: Response): void => {
-  res.status(200).json(users);
+const userRepository = new UserRepository();
+
+export const getUsers = async (req: Request, res: Response) => {
+  try {
+    const users = await userRepository.getAllUsers();
+    res.status(200).json(users);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Erro ao buscar usuários" });
+  }
 };
 
-export const createUser = (req: Request, res: Response): void => {
-  const newUser: User = {
-    id: users.length + 1,
-    ...req.body
-  };
-  users.push(newUser);
-  res.status(201).json(newUser);
+export const addUser = async (req: Request, res: Response) => {
+  const { name, senha } = req.body;
+  try {
+    const user = await userRepository.addUser(name, senha);
+    res.status(201).json(user);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Erro ao adicionar usuário" });
+  }
 };
