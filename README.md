@@ -31,3 +31,13 @@ Certifique-se de ter as seguintes ferramentas instaladas:
 
    ```bash
    git clone https://github.com/seu-usuario/FilmStore.git
+ 2. Inicie o servidor:
+   npx ts-node src/server.ts
+
+3. /users Para ver os Usuários & /films Para ver os Filmes Cadastrados
+   exemplo de Post Usuário:
+   curl -X POST http://localhost:3000/auth/register -H "Content-Type: application/json" -d '{"name": "Caio Cesar", "email": "caioteste@example.com", "senha": "caioSegura123!"}'
+   
+   Exemplo de Post Filmes:
+   curl -X POST http://localhost:3000/films -H "Content-Type: application/json" -d '{ "title": "Matrix","descricao": "Realidade virtual e inteligência artificial","price": 19.99,"livroImg":       
+   "https://br.web.img2.acsta.net/medias/nmedia/18/91/08/82/20128877.JPG"}'
